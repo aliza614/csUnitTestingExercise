@@ -13,55 +13,63 @@ namespace UnitTestingExercise.Tests
 
             //Arrange
             // create a Calculator object
-            
+            Calculator calculator = new Calculator();
+
 
             //Act
-                // call the Add method that is located in the Calculator class
-                // and store its result in a variable named actual
+            // call the Add method that is located in the Calculator class
+            // and store its result in a variable named actual
+            var actual = calculator.Add(num1, num2, num3);
 
             //Assert
-                //Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(5,7,-2)]//Add test data <-------
         public void SubtractTest(int minuend, int subtrhend, int expected)
         {
             //Start Step 5 here:
 
             //Arrange
-
+            Calculator calculator = new Calculator();
             //Act
-
+            var actual = calculator.Subtract(minuend, subtrhend);
             //Assert
-
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(3,2,6)]//Add test data <-------
         public void MultiplyTest(int num1, int num2, int expected)
         {
             //Start Step 7 here:
 
             //Arrange
+            Calculator calculator = new Calculator();
 
-            //Act
-
-            //Assert
-
+            //act
+            var actual=calculator.Multiply(num1, num2);
+            
+            //assert
+            Assert.Equal(expected, actual);
         }
-
+        
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(6,3,2)]//Add test data <-------
         public void DivideTest(int num1, int num2, int expected)
         {
-            //Arrange
+            //arrange
+            Calculator calculator = new Calculator();
 
-            //Act
+            //act
+            var actual = calculator.Divide(num1, num2);
 
-            //Assert
-
+            //assert
+            Assert.Equal(expected,actual);
         }
-
+        //Red-run all tests DONE
+        //Green-implement methods then rerun tests
+        //refactor
     }
 }
